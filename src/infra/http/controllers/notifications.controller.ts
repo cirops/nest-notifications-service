@@ -5,11 +5,13 @@ import { ReadNotification } from '@app/use-cases/read-notification';
 import { SendNotification } from '@app/use-cases/send-notification';
 import { UnreadNotification } from '@app/use-cases/unread-notification';
 import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
 import { CreateNotificationBody } from '../dtos/create-notification-body';
 import { NotificationViewModel } from '../view-models/notification-view-model';
 
 @Controller('notifications')
+@ApiTags('Notifications')
 export class NotificationsController {
   constructor(
     private sendNotification: SendNotification,
